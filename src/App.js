@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Form } from "./Form";
+import { ListTodo } from "./ListTodo";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [todo, setTodo] = useState([{ title: "", complete: false, id: 1 }]);
+
+  const addTodo = (title) => {
+    const id = Math.max(todo.map((todo) => todo.id));
+    const newTodo = {
+      title,
+      complete: false,
+      id: id + 1,
+    };
+
+    setTodo((prev) => [...prev, newTodo]);
+  };
+
+  const deleteTodo = (id) => {
+    setTodo((prev) => prev.filter((todoItem) => todoItem.id !== id));
+  };
+
+  const toggleComplete = (id) => {
+    setTodo((prev) =>
+      prev.map((todoItem) =>
+        todoItem.id === id
+          ? { ...todoItem, complete: !todoItem.complete }
+          : todoItem,
+      ),
+    );
+  };
+
+  const handleReset = () => {
+    setTodo([]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form add={addTodo} handleReset={handleReset} />
+      <ListTodo
+        todo={todo}
+        deleteTodo={deleteTodo}
+        toggleComplete={toggleComplete}
+      />
     </div>
   );
-}
+};
 
 export default App;

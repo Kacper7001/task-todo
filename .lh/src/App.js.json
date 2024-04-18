@@ -1,0 +1,82 @@
+{
+    "sourceFile": "src/App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1713424648663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1713424672263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n import { useState } from 'react';\n-import './App.scss';\n-import { Form } from './';\n+import { Form } from './Form';\n \n export const App = () => {\n   const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n \n"
+                },
+                {
+                    "date": 1713424835808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,21 @@\n+import { useState } from 'react';\n+import { Form } from './Form';\n+\n+export const App = () => {\n+  const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n+  \n+  const addTodo = (title) => {\n+    const newTodo = {\n+      title,\n+      complete: false,\n+    }\n+\n+    setTodo((prev) => [...prev, newTodo]);\n+  };\n+\n+  return (\n+    <div className=\"App\">\n+      <Form add={addTodo}/>\n+    </div>\n+  );\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713424844535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,21 @@\n+import { useState } from 'react';\n+import { Form } from './Form';\n+\n+export const App = () => {\n+  const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n+\n+  const addTodo = (title) => {\n+    const newTodo = {\n+      title,\n+      complete: false,\n+    }\n+\n+    setTodo((prev) => [...prev, newTodo]);\n+  };\n+\n+  return (\n+    <div className=\"App\">\n+      <Form add={addTodo}/>\n+    </div>\n+  );\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713425122121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,22 @@\n+import { useState } from 'react';\n+import { Form } from './Form';\n+\n+export const App = () => {\n+  const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n+\n+  const addTodo = (title) => {\n+    const newTodo = {\n+      title,\n+      complete: false,\n+    }\n+\n+    setTodo((prev) => [...prev, newTodo]);\n+  };\n+\n+  return (\n+    <div className=\"App\">\n+      <Form add={addTodo}/>\n+      <\n+    </div>\n+  );\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713425129031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,23 @@\n+import { useState } from 'react';\n+import { Form } from './Form';\n+import { ListTodo } from './ListTodo';\n+\n+export const App = () => {\n+  const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n+\n+  const addTodo = (title) => {\n+    const newTodo = {\n+      title,\n+      complete: false,\n+    }\n+\n+    setTodo((prev) => [...prev, newTodo]);\n+  };\n+\n+  return (\n+    <div className=\"App\">\n+      <Form add={addTodo}/>\n+      <ListTodo \n+    </div>\n+  );\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713425134517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,23 @@\n+import { useState } from 'react';\n+import { Form } from './Form';\n+import { ListTodo } from './ListTodo';\n+\n+export const App = () => {\n+  const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n+\n+  const addTodo = (title) => {\n+    const newTodo = {\n+      title,\n+      complete: false,\n+    }\n+\n+    setTodo((prev) => [...prev, newTodo]);\n+  };\n+\n+  return (\n+    <div className=\"App\">\n+      <Form add={addTodo}/>\n+      <ListTodo todo={todo}\n+    </div>\n+  );\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713425178770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { useState } from 'react';\n import { Form } from './Form';\n import { ListTodo } from './ListTodo';\n \n-export const App = () => {\n+const App = () => {\n   const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n \n   const addTodo = (title) => {\n     const newTodo = {\n@@ -16,116 +16,8 @@\n \n   return (\n     <div className=\"App\">\n       <Form add={addTodo}/>\n-      <ListTodo todo={todo}\n+      <ListTodo todo={todo} />\n     </div>\n   );\n-};\n-import { useState } from 'react';\n-import { Form } from './Form';\n-import { ListTodo } from './ListTodo';\n-\n-export const App = () => {\n-  const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n-\n-  const addTodo = (title) => {\n-    const newTodo = {\n-      title,\n-      complete: false,\n-    }\n-\n-    setTodo((prev) => [...prev, newTodo]);\n-  };\n-\n-  return (\n-    <div className=\"App\">\n-      <Form add={addTodo}/>\n-      <ListTodo \n-    </div>\n-  );\n-};\n-import { useState } from 'react';\n-import { Form } from './Form';\n-\n-export const App = () => {\n-  const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n-\n-  const addTodo = (title) => {\n-    const newTodo = {\n-      title,\n-      complete: false,\n-    }\n-\n-    setTodo((prev) => [...prev, newTodo]);\n-  };\n-\n-  return (\n-    <div className=\"App\">\n-      <Form add={addTodo}/>\n-      <\n-    </div>\n-  );\n-};\n-import { useState } from 'react';\n-import { Form } from './Form';\n-\n-export const App = () => {\n-  const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n-\n-  const addTodo = (title) => {\n-    const newTodo = {\n-      title,\n-      complete: false,\n-    }\n-\n-    setTodo((prev) => [...prev, newTodo]);\n-  };\n-\n-  return (\n-    <div className=\"App\">\n-      <Form add={addTodo}/>\n-    </div>\n-  );\n-};\n-import { useState } from 'react';\n-import { Form } from './Form';\n-\n-export const App = () => {\n-  const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n-  \n-  const addTodo = (title) => {\n-    const newTodo = {\n-      title,\n-      complete: false,\n-    }\n-\n-    setTodo((prev) => [...prev, newTodo]);\n-  };\n-\n-  return (\n-    <div className=\"App\">\n-      <Form add={addTodo}/>\n-    </div>\n-  );\n-};\n-import { useState } from 'react';\n-import { Form } from './Form';\n-\n-export const App = () => {\n-  const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n-\n-  const addTodo = (title) => {\n-    const newTodo = {\n-      title,\n-      complete: false,\n-    }\n-\n-    setTodo((prev) => [...prev, newTodo]);\n-  };\n-\n-  return (\n-    <div className=\"App\">\n-      <Form add={addTodo}/>\n-    </div>\n-  );\n };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713425188586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,7 @@\n       <Form add={addTodo}/>\n       <ListTodo todo={todo} />\n     </div>\n   );\n-};\n\\ No newline at end of file\n+};\n+\n+export App default;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713425223248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,4 +20,5 @@\n       <ListTodo todo={todo} />\n     </div>\n   );\n };\n+export default App;\n"
+                },
+                {
+                    "date": 1713425264836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { Form } from './Form';\n import { ListTodo } from './ListTodo';\n \n const App = () => {\n-  const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n+  const [todo, setTodo] = useState([{title: 'string, complete: false}]);\n \n   const addTodo = (title) => {\n     const newTodo = {\n       title,\n@@ -21,6 +21,4 @@\n     </div>\n   );\n };\n export default App;\n-\n-export App default;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713425273157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,24 @@\n+import { useState } from 'react';\n+import { Form } from './Form';\n+import { ListTodo } from './ListTodo';\n+\n+const App = () => {\n+  const [todo, setTodo] = useState([{title: 'string, complete: false}]);\n+\n+  const addTodo = (title) => {\n+    const newTodo = {\n+      title,\n+      complete: false,\n+    }\n+\n+    setTodo((prev) => [...prev, newTodo]);\n+  };\n+\n+  return (\n+    <div className=\"App\">\n+      <Form add={addTodo}/>\n+      <ListTodo todo={todo} />\n+    </div>\n+  );\n+};\n+export default App;\n"
+                },
+                {
+                    "date": 1713425281024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { Form } from './Form';\n import { ListTodo } from './ListTodo';\n \n const App = () => {\n-  const [todo, setTodo] = useState([{title: 'string, complete: false}]);\n+  const [todo, setTodo] = useState([{title: ':d', complete: false}]);\n \n   const addTodo = (title) => {\n     const newTodo = {\n       title,\n@@ -21,28 +21,4 @@\n     </div>\n   );\n };\n export default App;\n-import { useState } from 'react';\n-import { Form } from './Form';\n-import { ListTodo } from './ListTodo';\n-\n-const App = () => {\n-  const [todo, setTodo] = useState([{title: 'string, complete: false}]);\n-\n-  const addTodo = (title) => {\n-    const newTodo = {\n-      title,\n-      complete: false,\n-    }\n-\n-    setTodo((prev) => [...prev, newTodo]);\n-  };\n-\n-  return (\n-    <div className=\"App\">\n-      <Form add={addTodo}/>\n-      <ListTodo todo={todo} />\n-    </div>\n-  );\n-};\n-export default App;\n"
+                },
+                {
+                    "date": 1713425293270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,24 @@\n+import { useState } from 'react';\n+import { Form } from './Form';\n+import { ListTodo } from './ListTodo';\n+\n+const App = () => {\n+  const [todo, setTodo] = useState([{title: 'todo', complete: true}]);\n+\n+  const addTodo = (title) => {\n+    const newTodo = {\n+      title,\n+      complete: false,\n+    }\n+\n+    setTodo((prev) => [...prev, newTodo]);\n+  };\n+\n+  return (\n+    <div className=\"App\">\n+      <Form add={addTodo}/>\n+      <ListTodo todo={todo} />\n+    </div>\n+  );\n+};\n+export default App;\n"
+                },
+                {
+                    "date": 1713436781616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { Form } from './Form';\n import { ListTodo } from './ListTodo';\n \n const App = () => {\n-  const [todo, setTodo] = useState([{title: 'todo', complete: true}]);\n+  const [todo, setTodo] = useState([{title: 'todo', complete: false}]);\n \n   const addTodo = (title) => {\n     const newTodo = {\n       title,\n@@ -16,33 +16,9 @@\n \n   return (\n     <div className=\"App\">\n       <Form add={addTodo}/>\n-      <ListTodo todo={todo} />\n+      <ListTodo todo={todo}/>\n     </div>\n   );\n };\n export default App;\n-import { useState } from 'react';\n-import { Form } from './Form';\n-import { ListTodo } from './ListTodo';\n-\n-const App = () => {\n-  const [todo, setTodo] = useState([{title: ':d', complete: false}]);\n-\n-  const addTodo = (title) => {\n-    const newTodo = {\n-      title,\n-      complete: false,\n-    }\n-\n-    setTodo((prev) => [...prev, newTodo]);\n-  };\n-\n-  return (\n-    <div className=\"App\">\n-      <Form add={addTodo}/>\n-      <ListTodo todo={todo} />\n-    </div>\n-  );\n-};\n-export default App;\n"
+                },
+                {
+                    "date": 1713436788491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n \n   return (\n     <div className=\"App\">\n       <Form add={addTodo}/>\n-      <ListTodo todo={todo} />\n+      <ListTodo todo={todo}/>\n     </div>\n   );\n };\n export default App;\n"
+                },
+                {
+                    "date": 1713453451937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,50 @@\n+import { useState } from \"react\";\n+import { Form } from \"./Form\";\n+import { ListTodo } from \"./ListTodo\";\n+import \"./App.css\";\n+\n+const App = () => {\n+  const [todo, setTodo] = useState([{ title: \"\", complete: false, id: 1 }]);\n+\n+  const addTodo = (title) => {\n+    const id = Math.max(todo.map((todo) => todo.id));\n+    const newTodo = {\n+      title,\n+      complete: false,\n+      id: id + 1,\n+    };\n+\n+    setTodo((prev) => [...prev, newTodo]);\n+  };\n+\n+  const deleteTodo = (id) => {\n+    setTodo((prev) => prev.filter((todoItem) => todoItem.id !== id));\n+  };\n+\n+  const toggleComplete = (id) => {\n+    setTodo((prev) =>\n+      prev.map((todoItem) =>\n+        todoItem.id === id\n+          ? { ...todoItem, complete: !todoItem.complete }\n+          : todoItem,\n+      ),\n+    );\n+  };\n+\n+  const handleReset = () => {\n+    setTodo([]);\n+  };\n+\n+  return (\n+    <div className=\"App\">\n+      <Form add={addTodo} handleReset={handleReset} />\n+      <ListTodo\n+        todo={todo}\n+        deleteTodo={deleteTodo}\n+        toggleComplete={toggleComplete}\n+      />\n+    </div>\n+  );\n+};\n+\n+export default App;\n"
+                }
+            ],
+            "date": 1713424648663,
+            "name": "Commit-0",
+            "content": "import { useState } from 'react';\nimport './App.scss';\nimport { Form } from './';\n\nexport const App = () => {\n  const [todo, setTodo] = useState([{title: 'string', complete: false}]);\n\n  const addTodo = (title) => {\n    const newTodo = {\n      title,\n      complete: false,\n    }\n\n    setTodo((prev) => [...prev, newTodo]);\n  };\n\n  return (\n    <div className=\"App\">\n      <Form add={addTodo}/>\n    </div>\n  );\n};"
+        }
+    ]
+}

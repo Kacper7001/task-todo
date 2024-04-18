@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/Form.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1713425235736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1713425249437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,24 @@\n+import { useState } from \"react\";\r\n+import React from 'react';\r\n+\r\n+\r\n+export const Form = ({ add }) => {\r\n+  const [title, setTitle] = useState();\r\n+\r\n+  const handleTitle = ({target: { value }}) => {\r\n+    setTitle(value)\r\n+   };\r\n+\r\n+  const handleSubmit = (event) => {\r\n+    event.preventDefault();\r\n+    add(title);\r\n+    setTitle('');\r\n+  }\r\n+  \r\n+  return (\r\n+    <form onSubmit={handleSubmit}>\r\n+      <input value={title} type=\"text\" onChange={handleTitle}/>\r\n+      <button type=\"submit\" onClick={handleSubmit}>Add todo</button>\r\n+    </form>\r\n+  );\r\n+};\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1713425260686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import React from 'react';\r\n \r\n \r\n export const Form = ({ add }) => {\r\n-  const [title, setTitle] = useState();\r\n+  const [title, setTitle] = useState('');\r\n \r\n   const handleTitle = ({target: { value }}) => {\r\n     setTitle(value)\r\n    };\r\n"
+                },
+                {
+                    "date": 1713453413693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+import { useState } from \"react\";\r\n+import React from \"react\";\r\n+\r\n+export const Form = ({ add, handleReset }) => {\r\n+  const [title, setTitle] = useState(\"\");\r\n+\r\n+  const handleTitle = ({ target: { value } }) => {\r\n+    setTitle(value);\r\n+  };\r\n+\r\n+  const handleSubmit = (event) => {\r\n+    event.preventDefault();\r\n+    add(title);\r\n+    setTitle(\"\");\r\n+  };\r\n+\r\n+  return (\r\n+    <form onSubmit={handleSubmit}>\r\n+      <input value={title} type=\"text\" onChange={handleTitle} />{\" \"}\r\n+      <button type=\"submit\" onClick={handleSubmit}>\r\n+        Add todo\r\n+      </button>\r\n+      <button onClick={handleReset}>Reset</button>\r\n+    </form>\r\n+  );\r\n+};\r\n"
+                }
+            ],
+            "date": 1713425235736,
+            "name": "Commit-0",
+            "content": "import { useState } from \"react\";\r\nimport React from 'react';\r\n\r\n\r\nexport const Form = ({ add }) => {\r\n  const [title, setTitle] = useState('');\r\n\r\n  const handleTitle = ({target: { value }}) => {\r\n    setTitle(value)\r\n   };\r\n\r\n  const handleSubmit = (event) => {\r\n    event.preventDefault();\r\n    add(title);\r\n    setTitle('');\r\n  }\r\n  \r\n  return (\r\n    <form onSubmit={handleSubmit}>\r\n      <input value={title} type=\"text\" onChange={handleTitle}/>\r\n      <button type=\"submit\" onClick={handleSubmit}>Add todo</button>\r\n    </form>\r\n  );\r\n};"
+        }
+    ]
+}
