@@ -7,7 +7,7 @@ const App = () => {
   const [todo, setTodo] = useState([{ title: "", complete: false, id: 1 }]);
 
   const addTodo = (title) => {
-    const id = Math.max(todo.map((todo) => todo.id));
+     const id = Math.max(...todo.map((todo) => todo.id));
     const newTodo = {
       title,
       complete: false,
